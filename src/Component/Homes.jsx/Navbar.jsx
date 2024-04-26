@@ -1,7 +1,19 @@
-import { NavLink } from "react-router-dom";
-
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider.jsx/AuthProvider";
 
 const Navbar = () => {
+
+
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogout = () => {
+        logOut()
+            .then(() => console.log("log out successfully"))
+            .catch((error) => console.log(error.message))
+    }
+
+
+
     const navLink = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/allTouristSpot">All Tourists Spot</NavLink></li>
@@ -22,7 +34,7 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost text-xl">VoyageHub</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -30,7 +42,18 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    {
+                        user ? <>
+                            <div className="tooltip  hover:tooltip-open" data-tip={user.displayName}>
+                                <span><img src={user.photoURL} className="ml-12 w-1/2 md:w-2/3" /></span>
+                            </div>
+
+                            <a onClick={handleLogout} className="btn btn-sm">Log out</a>
+                        </> :
+                            <>
+                                <Link to="/Login"><button className="btn btn-secondary">Log in</button></Link>
+                            </>
+                    }
                 </div>
             </div>
         </div>
