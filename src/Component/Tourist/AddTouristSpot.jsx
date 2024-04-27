@@ -1,14 +1,57 @@
-
+import swal from 'sweetalert2'
 
 const AddTouristSpot = () => {
-    const handleSubmit = e => {
+    const handleTouristSpot = e => {
         e.preventDefault();
+        const form = e.target;
+        const image = form.image.value;
+        const tourists_spot_name = form.tourists_spot_name.value;
+        const country_name = form.country_name.value;
+        const location = form.location.value;
+        const short_description = form.short_description.value;
+        const average_cost = form.average_cost.value;
+        const seasonality = form.seasonality.value;
+        const total_visitors_per_year = form.total_visitors_per_year.value;
+        const travel_time = form.travel_time.value;
+        const user_name = form.user_name.value;
+        const user_email = form.user_email.value;
+
+        const newSpot = {
+            image, tourists_spot_name, country_name, location, 
+            short_description, average_cost, seasonality, total_visitors_per_year, travel_time, user_name, user_email
+        }
+        console.log(newSpot)
+
+
+        ////// fetch
+        fetch("http://localhost:5000/TouristSpots", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(newSpot)
+        })
+         .then(res => res.json())
+         .then(data => {
+            console.log(data)
+            if (data.insertedId) {
+                swal.fire({
+                    title: 'Success!',
+                    text: 'new spot added successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+
+                })
+            }
+            })
+
+
     }
     return (
         <div className="bg-purple-500 my-20 py-10 rounded-3xl">
             <h2 className="text-center font-bold text-3xl">Add Tourist Spot</h2>
             <div className="flex justify-center py-10 mx-10 md:mx-0">
-                <form onSubmit={handleSubmit} className="text-justify grid md:grid-cols-2 gap-10 md:gap-20 font-bold text-gray-900">
+                <form onSubmit={handleTouristSpot} className="text-justify grid md:grid-cols-2 gap-10 md:gap-20 font-bold text-gray-900">
                     <div className="flex md:justify-between">
                         <label>Image URL:</label>
                         <input type="text" name="image" className="py-2 px-2 rounded-md" />
@@ -24,8 +67,8 @@ const AddTouristSpot = () => {
                             <option value="Bangladesh">Bangladesh</option>
                             <option value="Malaysia">Malaysia</option>
                             <option value="Thailand">Thailand</option>
-                            <option value = "Indonesia">Indonesia</option>
-                            <option value = "Vietnam"> Vietnam </option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Vietnam"> Vietnam </option>
                         </select>
                     </div>
                     <div className="flex justify-between">
