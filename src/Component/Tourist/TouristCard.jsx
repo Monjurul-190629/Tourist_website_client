@@ -8,7 +8,7 @@ const TouristCard = ({ tspot }) => {
 
     return (
         <div>
-            <div className="my-20">
+            <div className="my-10">
                 <div className="card w-full md:w-96 bg-base-100 shadow-xl text-white text-center font-bold border-2 border-black">
                     <div className="bg-gray-800 shadow-xl rounded-2xl px-2 py-3 border-2 border-black">
                         <figure className="px-10 md:pt-5">
