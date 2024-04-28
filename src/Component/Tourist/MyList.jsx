@@ -1,10 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import SpotActions from "./SpotActions";
+import { useState } from "react";
 
 
 const MyList = () => {
     
     const mySpot = useLoaderData();
+
+    const [spot, setSpot] = useState(mySpot);
 
     return (
         <div className="flex flex-col justify-center items-center">
@@ -21,7 +24,7 @@ const MyList = () => {
                 </thead>
                 <tbody>
                     {
-                        mySpot.map(spt => <SpotActions key = {spt._id} spt = {spt}></SpotActions>)
+                        mySpot.map(spt => <SpotActions key = {spt._id} spt = {spt} spot = {spot} setSpot = {setSpot}></SpotActions>)
                     }
                 </tbody>
             </table>
