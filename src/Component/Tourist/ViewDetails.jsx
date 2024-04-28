@@ -32,10 +32,9 @@ const ViewDetails = () => {
                     <h2 className="text-xl font-semibold my-4 text-gray-200">Travel_time: {travel_time}</h2>
                     <h2 className="text-xl font-semibold my-4 text-gray-200">Average_cost: {average_cost}</h2>
                     <h2 className="text-xl font-semibold my-4 text-gray-200">Seasonality: {seasonality}</h2>
-                    <div className="flex flex-col justify-center gap-4 text-xl font-bold mt-10">
+                    <div className="flex flex-col justify-center md:text-xl gap-4 border-2 border-white py-2 px-2 font-bold mt-10">
                          <h3>User name : {user_name}</h3>
                          <h3>User email : {user_email}</h3>
-
                     </div>
 
                 </div>

@@ -15,6 +15,7 @@ import AddTouristSpot from './Component/Tourist/AddTouristSpot.jsx';
 import MyList from './Component/Tourist/MyList.jsx';
 import AuthProvider from './Component/Provider.jsx/AuthProvider.jsx';
 import ViewDetails from './Component/Tourist/ViewDetails.jsx';
+import Privateroute from './Component/Routes/PrivateRoute.jsx';
 
 
 const router = createBrowserRouter([
@@ -36,20 +37,21 @@ const router = createBrowserRouter([
       },
       {
         path: "allTouristSpot",
-        element : <AllTouristSpot></AllTouristSpot>,
+        element : <AllTouristSpot></AllTouristSpot>, 
         loader : () => fetch("http://localhost:5000/TouristSpots")
       },
       {
         path: "addTouristSpot",
-        element : <AddTouristSpot></AddTouristSpot>
+        element : <Privateroute><AddTouristSpot></AddTouristSpot></Privateroute>
       },
       {
         path: "MyList",
-        element : <MyList></MyList>
+        element : <MyList></MyList>,
+        loader : () => fetch("http://localhost:5000/TouristSpots")
       },
       {
         path: "ViewDetails/:id",
-        element : <ViewDetails></ViewDetails>,
+        element : <Privateroute><ViewDetails></ViewDetails></Privateroute>,
         loader : () => fetch("http://localhost:5000/TouristSpots")
       }
     ]
