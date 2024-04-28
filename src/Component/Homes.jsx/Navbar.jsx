@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider.jsx/AuthProvider";
+import { Typewriter } from 'react-simple-typewriter'
 
 const Navbar = () => {
 
@@ -35,7 +36,15 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">VoyageHub</a>
+                    <a className="btn btn-ghost text-xl"><Typewriter
+                        words={['VoyageHub']}
+                        loop={50}
+                        cursor
+                        cursorStyle='_'
+                        typeSpeed={70}
+                        deleteSpeed={50}
+                        delaySpeed={1000}
+                    /> </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

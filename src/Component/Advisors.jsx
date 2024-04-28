@@ -3,7 +3,7 @@
 const Advisors = () => {
     return (
         <div className="grid md:grid-cols-2 gap-10 mb-10">
-            <div className="card card-side bg-base-100 shadow-xl flex md:flex-row flex-col justify-center bg-slate-400">
+            <div className="card card-side shadow-xl flex md:flex-row flex-col justify-center bg-slate-400">
                 <figure><img src="https://i.ibb.co/hfNZCX7/350b8188dc1170be76479bebaa1db9c3.jpg" alt="Movie" className="h-72 rounded-3xl"/></figure>
                 <div className="card-body">
                     <h2 className="w-72 font-bold">
@@ -13,7 +13,7 @@ const Advisors = () => {
                    
                 </div>
             </div>
-            <div className="card card-side bg-base-100 shadow-xl flex md:flex-row flex-col justify-center bg-slate-400">
+            <div className="card card-side  shadow-xl flex md:flex-row flex-col justify-center bg-slate-400">
                 <figure><img src="https://variety.com/wp-content/uploads/2018/06/depp.jpg?w=681&h=383&crop=1&resize=681%2C383" alt="Movie" className="h-72 rounded-3xl"/></figure>
                 <div className="card-body">
                     <h2 className="w-72 font-bold ">
