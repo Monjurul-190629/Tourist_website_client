@@ -21,6 +21,7 @@ const Navbar = () => {
         <li><NavLink to="/MyList">My List</NavLink></li>
         <li><NavLink to="/Login">Login</NavLink></li>
         <li><NavLink to="/Register">Register</NavLink></li>
+        <li><NavLink to="/Not_Founded_Page">Not_Founded_Page</NavLink></li>
     </>
     return (
         <div>

@@ -17,6 +17,7 @@ import AuthProvider from './Component/Provider.jsx/AuthProvider.jsx';
 import ViewDetails from './Component/Tourist/ViewDetails.jsx';
 import Privateroute from './Component/Routes/PrivateRoute.jsx';
 import UpdateData from './Component/Tourist/UpdateData.jsx';
+import Not_Founded_Page from './Component/Not_Fouded_Page.jsx';
 
 
 const router = createBrowserRouter([
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
         path : "UpdateData/:id",
         element : <Privateroute><UpdateData></UpdateData></Privateroute>,
         loader : ({params}) => fetch(`http://localhost:5000/TouristSpots/${params.id}`)
+      },
+      {
+        path: "Not_Founded_Page",
+        element : <Not_Founded_Page></Not_Founded_Page>
       }
     ]
   },
