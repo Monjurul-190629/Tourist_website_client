@@ -1,4 +1,6 @@
+import Advisors from "../Advisors";
 import TouristCard from "../Tourist/TouristCard";
+import Transport from "../Transport";
 import Banner from "./Banner";
 import { useLoaderData } from "react-router-dom";
 
@@ -22,6 +24,14 @@ const Home = () => {
 
                             </TouristCard>)
                         }
+                    </div>
+                    <h3 className="text-3xl text-center font-bold underline my-10">Our Transport Services</h3>
+                    <div>
+                        <Transport></Transport>
+                    </div>
+                    <h3 className="text-3xl text-center font-bold underline my-20">Our Advisors</h3>
+                    <div>
+                       <Advisors></Advisors>
                     </div>
                 </div>
             </div>

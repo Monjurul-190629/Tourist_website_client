@@ -2,7 +2,7 @@
 
 const footer = () => {
     return (
-        <div>
+        <div className="mt-20">
             <footer className="footer grid-rows-2 md:justify-between mb-0 mt-10 justify-center p-20 bg-gray-800 text-neutral-content">
                 <nav>
                     <h6 className="footer-title">Services</h6>
