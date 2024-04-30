@@ -36,7 +36,7 @@ const UpdateData = () => {
 
         ////fetch
         ////// fetch
-        fetch(`http://localhost:5000/TouristSpots/${_id}`, {
+        fetch(`https://assignment-10-server-sable.vercel.app/TouristSpots/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -83,6 +83,7 @@ const UpdateData = () => {
                             <option value="Thailand">Thailand</option>
                             <option value="Indonesia">Indonesia</option>
                             <option value="Vietnam"> Vietnam </option>
+                            <option value="Combodia"> Combodia </option>
                         </select>
                     </div>
                     <div className="flex justify-between">

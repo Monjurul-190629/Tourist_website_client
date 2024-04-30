@@ -9,9 +9,9 @@ const TouristCard = ({ tspot }) => {
     return (
         <div>
             <div className="my-10">
-                <div className="card w-full md:w-96 bg-base-100 shadow-xl text-white text-center font-bold border-2 border-black">
+                <div className="py-4 px-4 rounded-xl  w-full md:w-96 bg-base-100 shadow-xl text-white text-center font-bold border-2 border-black">
                     <div className="bg-gray-800 shadow-xl rounded-2xl px-2 py-3 border-2 border-black">
-                        <figure className="px-10 md:pt-5">
+                        <figure className="px-10 md:pt-5 flex justify-center">
                             <img src={image} alt="img" className="rounded-xl h-36 w-48" />
                         </figure>
                         <div className="card-body items-center text-center">

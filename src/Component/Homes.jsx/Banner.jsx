@@ -2,10 +2,10 @@
 
 const Banner = () => {
     return (
-        <div>
+        <div className="mx-10">
             
             <div className="carousel w-full relative">
-                <div id="item1" className="carousel-item w-full h-screen relative">
+                <div id="item1" className="carousel-item w-full h-screen relative text-center">
                     <img src="https://i.ibb.co/3NCD2r3/Coxs-Bazar-Exclusive-picture-coxsbazarcity-com-21.jpg" className="absolute inset-0 w-full h-full object-cover" alt="Cox's Bazar" />
                     <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-50">
                         <p className="text-white text-2xl font-bold">Cox's Bazar</p>

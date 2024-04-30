@@ -25,8 +25,8 @@ const Navbar = () => {
         <li><NavLink to="/Not_Founded_Page">Not_Founded_Page</NavLink></li>
     </>
     return (
-        <div>
-            <div className="navbar bg-base-100">
+        <div className="mx-10">
+            <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

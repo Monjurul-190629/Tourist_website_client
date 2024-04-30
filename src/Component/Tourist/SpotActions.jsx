@@ -34,7 +34,7 @@ const SpotActions = ({ spt, spot, setSpot }) => {
                   icon: "success"
                 });
                 */
-                fetch(`http://localhost:5000/TouristSpots/${_id}`, {
+                fetch(`https://assignment-10-server-sable.vercel.app/TouristSpots/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

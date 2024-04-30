@@ -11,7 +11,7 @@ const MyList = () => {
 
     return (
         <div className="flex flex-col justify-center items-center">
-            <h2 className="font-bold text-xl md:text-3xl mt-10">Your Tourist Spots</h2>
+            <h2 className="font-bold text-xl md:text-3xl mt-5">Your Tourist Spots</h2>
             <table className="text-center mx-5">
                 <thead className="">
                     <tr className="flex gap-2 md:gap-10 my-5 md:my-10">

@@ -18,6 +18,8 @@ import ViewDetails from './Component/Tourist/ViewDetails.jsx';
 import Privateroute from './Component/Routes/PrivateRoute.jsx';
 import UpdateData from './Component/Tourist/UpdateData.jsx';
 import Not_Founded_Page from './Component/Not_Fouded_Page.jsx';
+import Country from './Component/Homes.jsx/Country.jsx';
+import Country_view_details from './Component/Homes.jsx/Country_view_details.jsx';
 
 
 const router = createBrowserRouter([
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/", 
         element : <Home></Home>,
-        loader : () => fetch("http://localhost:5000/TouristSpots")
+        loader : () => fetch("https://assignment-10-server-sable.vercel.app/TouristSpots")
       },
       {
         path : "/Login",
@@ -41,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: "allTouristSpot",
         element : <AllTouristSpot></AllTouristSpot>, 
-        loader : () => fetch("http://localhost:5000/TouristSpots")
+        loader : () => fetch("https://assignment-10-server-sable.vercel.app/TouristSpots")
       },
       {
         path: "addTouristSpot",
@@ -50,22 +52,32 @@ const router = createBrowserRouter([
       {
         path: "MyList",
         element : <Privateroute><MyList></MyList></Privateroute>,
-        loader : () => fetch("http://localhost:5000/TouristSpots")
+        loader : () => fetch("https://assignment-10-server-sable.vercel.app/TouristSpots")
       },
       {
         path: "ViewDetails/:id",
         element : <Privateroute><ViewDetails></ViewDetails></Privateroute>,
-        loader : () => fetch("http://localhost:5000/TouristSpots")
+        loader : () => fetch("https://assignment-10-server-sable.vercel.app/TouristSpots")
       },
       {
         path : "UpdateData/:id",
         element : <Privateroute><UpdateData></UpdateData></Privateroute>,
-        loader : ({params}) => fetch(`http://localhost:5000/TouristSpots/${params.id}`)
+        loader : ({params}) => fetch(`https://assignment-10-server-sable.vercel.app/TouristSpots/${params.id}`)
       },
       {
         path: "Not_Founded_Page",
         element : <Not_Founded_Page></Not_Founded_Page>
-      }
+      },
+      {
+        path: "Country",
+        element : <Country></Country>,
+        loader : () => fetch("https://assignment-10-server-sable.vercel.app/Country_collection")
+      },
+      {
+        path: "ViewDetailsCountry/:id",
+        element : <Country_view_details></Country_view_details>,
+        loader : () => fetch("https://assignment-10-server-sable.vercel.app/Country_collection")
+      },
     ]
   },
 ]);

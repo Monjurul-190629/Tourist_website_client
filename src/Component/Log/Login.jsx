@@ -64,7 +64,7 @@ const Login = () => {
 
 
     return (
-        <div className="hero min-h-screen my-0 md:my-10 md:py-10">
+        <div className="hero my-0 md:my-5 md:py-10">
             <div className="hero-content flex-col shadow-3xl bg-red-300 rounded-2xl">
                 <div className="text-center lg:text-left">
                     <h1 className="text-2xl md:text-3xl md:py-10 font-bold ">Login now!</h1>
@@ -89,11 +89,11 @@ const Login = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
-                    <div className="flex gap-5 justify-center mb-5">
+                    <div className="flex gap-5 justify-center mb-5 text-center">
                         <button onClick={handleGoogleLogin} className="text-xl py-1 px-2 border-2 border-black rounded-lg"><FaGoogle /></button>
                         <button onClick={handleGithubLogin} className="text-xl py-1 px-2 border-2 border-black rounded-lg"><FaGithub /></button>
                     </div>
-                    <p>New here ? Please <Link to="/Register"><button className="bg-blue-700 text-white font-bold py-1 px-2 rounded-lg">Register</button></Link></p>
+                    <p className="text-center">New here ? Please <Link to="/Register"><button className="bg-blue-700 text-white font-bold py-1 px-2 rounded-lg">Register</button></Link></p>
                 </div>
 
             </div>

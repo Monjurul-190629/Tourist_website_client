@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import TouristCard from "./TouristCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 
 const AllTouristSpot = () => {
@@ -29,24 +29,45 @@ const AllTouristSpot = () => {
         sortTouristSpots();
     };
 
+    const [loading, setLoading] = useState(true); 
+
+    useEffect(() => {
+        // Simulating fetching data from an API
+        setTimeout(() => {
+            fetchData();
+        }, 2000); // 
+    }, []);
+
+    const fetchData = () => {
+        setLoading(false);
+    };
+
     return (
-        <div>
-            <h3 className="text-3xl mt-10 font-bold underline">Tourist Spot : {touristSpot.length}</h3>
+        <div className="mx-10">
+            <h3 className="text-3xl font-bold underline text-center">Tourist Spot : {touristSpot.length}</h3>
             <br /><br />
-            <label htmlFor="sort">Sort by Average Cost:</label>
-            <select id="sort" onChange={handleSortChange} value={sortOrder}>
+            <label htmlFor="sort" className="text-center">Sort by Average Cost:</label>
+            <select id="sort" onChange={handleSortChange} value={sortOrder} className="">
                 <option value="asc">Low to High</option>
                 <option value="desc">High to Low</option>
             </select>
-            <Fade>
-                <div className="grid md:grid-cols-3 md:gap-10 mx-5 ">
-                    {
-                        touristSpot.map(tspot => <TouristCard key={tspot._id} tspot={tspot}>
+            <br/>
+            <br/>
 
-                        </TouristCard>)
-                    }
-                </div>
-            </Fade>
+            {loading ? (
+                <span className="loading loading-bars loading-lg text-center"></span>
+            ) : (
+                // Render data
+                <Fade>
+                    <div className="grid md:grid-cols-3 md:gap-10 mx-5 ">
+                        {
+                            touristSpot.map(tspot => <TouristCard key={tspot._id} tspot={tspot}>
+
+                            </TouristCard>)
+                        }
+                    </div>
+                </Fade>
+            )}
         </div>
     );
 };
