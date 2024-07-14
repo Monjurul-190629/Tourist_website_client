@@ -13,8 +13,7 @@ const Root = () => {
     };
     return (
         <div className={`bg-${darkMode ? 'gray-800' : 'white'} ${darkMode ? 'text-blue-700' : 'black'} transition-colors duration-500 w-screen`}>
-            <div className="">
-                
+            <div className=""> 
                 <button onClick={toggleTheme} className="bg-blue-500 hover:bg-black-700 text-white font-bold py-2 px-4 rounded">
                     {darkMode ? <MdOutlineDarkMode/> : <MdNightlight/>}
                 </button>

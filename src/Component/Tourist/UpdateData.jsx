@@ -11,7 +11,7 @@ const UpdateData = () => {
     const {_id,  image, tourists_spot_name, country_name, location,
         short_description, average_cost, seasonality, total_visitors_per_year, travel_time } = spot;
 
-
+    
 
 
     const handleUpdateData = e => {
